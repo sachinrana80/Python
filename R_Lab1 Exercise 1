@@ -1,0 +1,56 @@
+# Lab. Exercise 1
+# Exercise 1 Consider the following sequence of numbers  1   3   7   2   4   6   3   2   5   2 
+# Assign the sequence to the variable x in R.  
+# All tasks outlined below, must be solved using proper coding. 
+# No numbers should be entered into the code. For instance, when assigning the number of elements in x to the variable n, 
+# do not write:  n <- 10. Instead use the appropriate command for the length of a sequence. 
+# Moreover, you will need all the information given above to solve the following tasks: 
+# a. Find the length of the sequence (use the variable name n)  
+# b. Count the number of times 𝑥𝑥 = 2 (hint: find a new sequence containing TRUE and FALSE, and then take the sum of the new sequence)
+# c. Compute the fraction of times 𝑥𝑥 ≥ 4 d. Find an index-set for which 𝑥𝑥 ≥ 4. 
+# Use the index-set to construct a new sequence, call it z, that contains the values of x larger than, or equal, to 4. e. 
+# Construct two new sequences; call them x1 and x2. Let x1 contain the first half elements of x and let x2 contain the second 
+# half elements of x. f. Construct two new sequences; call them y1 and y2. Let y1 contain the n/2 smallest elements in x and let y2 
+# contain the n/2 largest elements in x.     
+
+# EXERCISE 1
+# Enter sequence
+# Clear all
+rm(list = ls())
+
+x <- c(1, 3, 7, 2, 4, 6, 3, 2, 5, 2)
+
+# a.
+n <- length(x)
+print(n)
+
+# b.
+b <- (x == 2)
+count2 <- sum(b)
+print(count2)
+
+# c.
+b <- (x >= 4)
+frac4 <- sum(b)/n
+print(frac4)
+
+# d.
+indexSet <- which(x >= 4)
+z <- x[indexSet]
+print(indexSet)
+print(z)
+
+# e.
+x1 <- x[1:(n/2)]
+x2 <- x[(n/2+1):n]
+print(x1)
+print(x2)
+
+# f.
+# First, construct a sequence with the sortet values of x
+sortX <- sort(x)
+y1 <- sortX[1:(n/2)]
+y2 <- sortX[(n/2+1):n]
+print(y1)
+print(y2)
+
